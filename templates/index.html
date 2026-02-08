@@ -250,7 +250,7 @@
           document.getElementById("tolerance").value,
         );
 
-        const response = await fetch("http://localhost:5000/simplify", {
+        const response = await fetch("/simplify", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ...originalGeoJSON, tolerance }),
