@@ -1,6 +1,6 @@
 import json
 import subprocess
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS
 
 # Enable static folder
@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route("/")
 def index():
-    return send_from_directory(".", "index.html")
+    return render_template("index.html")
 
 
 @app.route("/simplify", methods=["POST"])
