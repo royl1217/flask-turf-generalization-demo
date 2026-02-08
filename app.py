@@ -11,7 +11,6 @@ CORS(app)
 def index():
     return render_template("index.html")
 
-
 @app.route("/simplify", methods=["POST"])
 def simplify():
     try:
@@ -43,13 +42,6 @@ def simplify():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
-
-# Optional: serve index.html if needed
-@app.route("/index")
-def index():
-    return send_from_directory(".", "index.html")
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
