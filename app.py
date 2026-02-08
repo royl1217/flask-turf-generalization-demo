@@ -8,8 +8,9 @@ app = Flask(__name__, static_folder="static", static_url_path="/static")
 CORS(app)
 
 @app.route("/")
-def home():
-    return "Flask + Turf.js simplification service is running"
+def index():
+    return send_from_directory(".", "index.html")
+
 
 @app.route("/simplify", methods=["POST"])
 def simplify():
